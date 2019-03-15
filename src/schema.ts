@@ -5,8 +5,13 @@ export const typeDefs = gql`
         subscribers: [String!]
     }
 
+    type Mutation {
+        say(something: String!): String!
+    }
+
     type Subscription {
         jokes: String!
         fibonacci: Int!
+        listen: String!
     }
 `;

@@ -1,7 +1,15 @@
-import { jokeIterator } from './jokeIterator';
 import { fibonacciIterator } from './fibonacciIterator';
+import { jokeIterator } from './jokeIterator';
+import { pubSub } from './pubsub';
 
 export const resolvers = {
+    Mutation: {
+        say: (_: any, { something }: { something: string }) => {
+            pubSub.publish('said', something);
+            return something;
+        },
+    },
+
     Subscription: {
         jokes: {
             subscribe: () => jokeIterator(),
@@ -12,8 +20,8 @@ export const resolvers = {
             resolve: (value: number) => value,
         },
         listen: {
-            subscribe: () => fibonacciIterator(),
-            resolve: (said: string) => said,
-        }
+            subscribe: () => pubSub.asyncIterator('said'),
+            resolve: (something: string) => something,
+        },
     },
 };
