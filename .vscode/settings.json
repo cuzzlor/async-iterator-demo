@@ -1,0 +1,10 @@
+{
+    "tslint.autoFixOnSave": true,
+    "editor.formatOnSave": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "mochaExplorer.require": ["ts-node/register"],
+    "mochaExplorer.files": "test/**/*.spec.ts",
+    "mochaExplorer.debuggerPort": 9228,
+    "mochaExplorer.exit": true,
+    "mochaExplorer.timeout": 10000
+}
