@@ -7,5 +7,6 @@ export const typeDefs = gql`
 
     type Subscription {
         jokes: String!
+        fibonacci: Int!
     }
 `;
