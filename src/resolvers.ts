@@ -1,5 +1,5 @@
-import { fibonacciIterator } from './fibonacciIterator';
-import { jokeIterator } from './jokeIterator';
+import { fibonacciAsyncIterable } from './fibonacciIterator';
+import { jokeAsyncIterable } from './jokeIterator';
 import { pubSub } from './pubsub';
 
 export const resolvers = {
@@ -12,11 +12,11 @@ export const resolvers = {
 
     Subscription: {
         jokes: {
-            subscribe: () => jokeIterator(),
+            subscribe: () => jokeAsyncIterable()(),
             resolve: (joke: string) => joke,
         },
         fibonacci: {
-            subscribe: () => fibonacciIterator(),
+            subscribe: () => fibonacciAsyncIterable()(),
             resolve: (value: number) => value,
         },
         listen: {

@@ -1,4 +1,6 @@
-export function* fibonacciIterator() {
+import { wait } from './wait';
+
+export function* fibonacciIterator(): IterableIterator<number> {
     yield 0;
     yield 1;
 
@@ -12,3 +14,18 @@ export function* fibonacciIterator() {
         yield next;
     }
 }
+
+export const fibonacciAsyncIterable = (delay = 1000, howMany?: number) => {
+    let iterations = 0;
+
+    return async function*() {
+        for (const value of fibonacciIterator()) {
+            yield value;
+            iterations++;
+            if (value === Infinity || (!!howMany && howMany >= iterations)) {
+                break;
+            }
+            await wait(delay);
+        }
+    };
+};
