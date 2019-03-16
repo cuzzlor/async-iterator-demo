@@ -4,7 +4,6 @@
     "description": "",
     "main": "./src/app.ts",
     "scripts": {
-        "murder-node": "taskkill /f /im node.exe",
         "debug": "set NODE_ENV=development&& ts-node-dev --inspect-brk=9229 src/app.ts",
         "start": "set NODE_ENV=development&& ts-node ./src/app.ts",
         "lint": "tslint ./src/**/*.ts",
