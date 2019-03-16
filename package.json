@@ -10,7 +10,6 @@
         "compile": "tsc"
     },
     "dependencies": {
-        "apollo-datasource-rest": "^0.3.2",
         "apollo-server": "^2.4.8",
         "axios": "^0.18.0",
         "graphql": "^14.1.1",
