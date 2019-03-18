@@ -22,7 +22,7 @@ export const fibonacciAsyncIterable = (delay = 1000, howMany?: number) => {
         for (const value of fibonacciIterator()) {
             yield value;
             iterations++;
-            if (value === Infinity || (!!howMany && howMany >= iterations)) {
+            if (value === Infinity || (!!howMany && iterations >= howMany)) {
                 break;
             }
             await wait(delay);

@@ -1,5 +1,5 @@
-import { fibonacciAsyncIterable } from './fibonacciIterator';
-import { jokeAsyncIterable } from './jokeIterator';
+import { fibonacciAsyncIterable } from './fibonacci';
+import { jokeAsyncIterable } from './jokes';
 import { pubSub } from './pubsub';
 
 export const resolvers = {
